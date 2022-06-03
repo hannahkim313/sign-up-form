@@ -19,5 +19,4 @@ coherent in terms of design.
 
 * [Coffee photo](https://unsplash.com/photos/zUNs99PGDg0) by [Nathan Dumlao](https://unsplash.com/@nate_dumlao)
 on Unsplash
-* [Coffee logo](https://www.vecteezy.com/vector-art/627016-coffee-cup-logo-template-vector-icon)
-by [Hati Royani](https://www.vecteezy.com/members/hati-royani) on Vecteezy
+* [Coffee logo](https://www.pngwing.com/en/free-png-vnpae) on PNGWing
