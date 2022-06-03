@@ -110,3 +110,33 @@ footer a {
     width: calc(100vw - var(--left-page-width));
     height: 100%;
 }
+
+/* ========================================================================== */
+/* Media queries start here.
+/* ========================================================================== */
+
+@media (max-width: 900px) {
+
+    /* Selectors for the left side of the page start here. */
+
+    body {
+        flex-wrap: wrap;
+    }
+
+    .left-container {
+        width: 100vw;
+        height: 300px;
+    }
+
+    .logo-banner {
+        top: 62.5px;
+    }
+
+    .logo {
+        top: 85px;
+    }
+
+    footer {
+        top: 245px;
+    }
+}
