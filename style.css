@@ -1,0 +1,112 @@
+* {
+    font-family: "Rubik", "Open Sans", sans-serif;
+}
+
+html {
+    font-size: 1rem;
+}
+
+body {
+    height: 100vh;
+    overflow: auto;
+    
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --left-page-width: calc(100vw / 2.5);
+}
+
+/* ========================================================================== */
+/* Selectors for the left side of the page start here.
+/* ========================================================================== */
+
+.left-container {
+    width: var(--left-page-width);
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img[src$="bg.jpg"] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-container {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-banner {
+    width: 100%;
+    height: 175px;
+    
+    background-color: white;
+    opacity: 0.7;
+
+    position: absolute;
+    top: calc(100vh / 6);
+}
+
+.logo {
+    width: 100%;
+    height: 130px;
+
+    position: absolute;
+    top: calc(100vh / 6 + 20px);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+img[src$="logo.png"] {
+    width: 100px;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+
+    color: #5E2802;
+}
+
+footer {
+    position: absolute;
+    top: calc(100vh - 55px);
+}
+
+footer a {
+    color: white;
+    opacity: 0.7;
+}
+
+/* ========================================================================== */
+/* Selectors for the right side of the page start here.
+/* ========================================================================== */
+
+.right-container {
+    width: calc(100vw - var(--left-page-width));
+    height: 100%;
+}
