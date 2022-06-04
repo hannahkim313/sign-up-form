@@ -205,12 +205,11 @@ button:hover {
 /* ========================================================================== */
 
 @media (max-width: 900px) {
-
-    /* Selectors for the left side of the page start here. */
-
     body {
         flex-wrap: wrap;
     }
+    
+    /* Selectors for the left side of the page start here. */
 
     .left-container {
         width: 100vw;
@@ -227,5 +226,11 @@ button:hover {
 
     footer {
         top: 245px;
+    }
+
+    /* Selectors for the right side of the page start here. */
+
+    .right-container {
+        width: 100vw;
     }
 }
