@@ -1,9 +1,6 @@
-* {
-    font-family: "Rubik", "Open Sans", sans-serif;
-}
-
 html {
     font-size: 1rem;
+    font-family: "Rubik", "Open Sans", sans-serif;
 }
 
 body {
@@ -11,10 +8,6 @@ body {
     overflow: auto;
     
     display: flex;
-}
-
-a {
-    text-decoration: none;
 }
 
 :root {
@@ -86,10 +79,11 @@ img[src$="logo.png"] {
 
 h1 {
     text-align: center;
-    margin: 0;
     white-space: nowrap;
-
+    
     color: #5E2802;
+
+    margin: 0;
 }
 
 footer {
@@ -100,6 +94,8 @@ footer {
 footer a {
     color: white;
     opacity: 0.7;
+
+    text-decoration: none;
 }
 
 /* ========================================================================== */
@@ -109,6 +105,99 @@ footer a {
 .right-container {
     width: calc(100vw - var(--left-page-width));
     height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+form {
+    width: 465px;
+    height: 565px;
+
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #5e280233, -4px 5px 10px #5e280233;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.title-container {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    
+    background-color: black;
+}
+
+.title-container p {
+    width: 80%;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+[class*="row-"] {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input {
+    width: 165px;
+
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+input ~ p {
+    font-size: 0.8rem;
+
+    margin: 0;
+}
+
+button {
+    color: white;
+
+    padding: 10px 15px;
+    background-color: #8A5837;
+
+    border: none;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px #5e280233, -5px 5px 10px #5e280233;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #774c2f;
+}
+
+.log-in-container a {
+    color: #5E2802;
 }
 
 /* ========================================================================== */
