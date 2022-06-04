@@ -39,6 +39,8 @@ img[src$="bg.jpg"] {
     object-fit: cover;
 }
 
+/* Selectors for the logo start here. */
+
 .content-container {
     width: 100%;
     height: 100%;
@@ -90,6 +92,8 @@ h1 {
     margin: 0;
 }
 
+/* Selectors for the footer start here. */
+
 footer {
     position: absolute;
     top: calc(100vh - 55px);
@@ -120,7 +124,7 @@ form {
     height: 565px;
 
     border-radius: 10px;
-    box-shadow: 4px 4px 10px #5e280233, -4px 5px 10px #5e280233;
+    box-shadow: 4px 4px 10px #64646447, -4px 5px 10px #64646447;
 
     display: flex;
     flex-direction: column;
@@ -128,6 +132,8 @@ form {
     align-items: center;
     gap: 30px;
 }
+
+/* Selectors for the title start here. */
 
 .title-container {
     text-align: center;
@@ -142,6 +148,8 @@ form {
 
     color: #646464;
 }
+
+/* Selectors for the inputs start here. */
 
 .inputs-container {
     display: flex;
@@ -168,6 +176,15 @@ input {
     border-radius: 3px;
 }
 
+input:focus,
+input:active {
+    outline: none;
+    /* border: 1px solid #895837; */
+    border: 1px solid #acc8bb;
+    /* box-shadow: 1px 1px 5px #b373483f, -1px 1px 5px #b373483f; */
+    box-shadow: 1px 1px 5px #acc8bb85, -1px 1px 5px #acc8bb85;
+}
+
 input ~ p {
     font-size: 0.8rem;
 
@@ -175,6 +192,8 @@ input ~ p {
 
     margin: 0;
 }
+
+/* Selectors for the button start here. */
 
 button {
     color: white;
@@ -194,6 +213,14 @@ button {
 button:hover {
     background-color: #774c2f;
 }
+
+button:focus {
+    outline-offset: 4px;
+    outline: 2px solid #8A5837;
+    box-shadow: 1px 1px 5px #5e280233, -1px 1px 5px #5e280233;
+}
+
+/* Selectors for the log in option start here. */
 
 .log-in-container a {
     color: #b37348;
