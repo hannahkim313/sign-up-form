@@ -169,7 +169,8 @@ form {
     gap: 5px;
 }
 
-input {
+input,
+input:valid {
     width: 165px;
 
     border: 1px solid #646464;
@@ -179,10 +180,12 @@ input {
 input:focus,
 input:active {
     outline: none;
-    /* border: 1px solid #895837; */
     border: 1px solid #acc8bb;
-    /* box-shadow: 1px 1px 5px #b373483f, -1px 1px 5px #b373483f; */
     box-shadow: 1px 1px 5px #acc8bb85, -1px 1px 5px #acc8bb85;
+}
+
+input:invalid {
+    border: 1px solid rgb(222, 97, 51);
 }
 
 input ~ p {
