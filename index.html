@@ -59,12 +59,24 @@
                     <div class="row">
                         <div class="row-one">
                             <label for="firstName">First name</label>
-                            <input type="text" id="firstName">
+                            <input
+                                type="text"
+                                id="firstName"
+                                maxlength="50"
+                                pattern="[a-zA-Z0-9]+"
+                                required
+                            >
                         </div>
 
                         <div class="row-one">
                             <label for="lastName">Last name</label>
-                            <input type="text" id="lastName">
+                            <input
+                                type="text"
+                                id="lastName"
+                                maxlength="50"
+                                pattern="[a-zA-Z0-9]+"
+                                required
+                            >
                         </div>
                     </div>
 
@@ -72,13 +84,24 @@
                     <div class="row">
                         <div class="row-two">
                             <label for="userEmail">Email</label>
-                            <input type="email" id="userEmail">
+                            <input
+                                type="email"
+                                id="userEmail"
+                                maxlength="50"
+                                required
+                            >
                             <p>Format: example@gmail.com</p>
                         </div>
 
                         <div class="row-two">
                             <label for="userPhoneNumber">Phone number</label>
-                            <input type="tel" id="userPhoneNumber">
+                            <input
+                                type="tel"
+                                id="userPhoneNumber"
+                                maxlength="12"
+                                pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                                required
+                            >
                             <p>Format: 123-456-7890</p>
                         </div>
                     </div>
@@ -87,12 +110,25 @@
                     <div class="row">
                         <div class="row-three">
                             <label for="userPassword">Password</label>
-                            <input type="password" id="userPassword">
+                            <input
+                                type="password"
+                                id="userPassword"
+                                minlength="8"
+                                maxlength="30"
+                                required
+                            >
+                            <p>Must contain 8-30 characters</p>
                         </div>
 
                         <div class="row-three">
                             <label for="confirmPassword">Confirm password</label>
-                            <input type="password" id="confirmPassword">
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                minlength="8"
+                                maxlength="30"
+                                required
+                            >
                         </div>
                     </div>
                 </div>
