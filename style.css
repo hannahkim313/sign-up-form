@@ -120,8 +120,8 @@ footer a {
 }
 
 form {
-    width: 465px;
-    height: 565px;
+    width: 500px;
+    height: 600px;
 
     border-radius: 10px;
     box-shadow: 4px 4px 10px #64646447, -4px 5px 10px #64646447;
@@ -144,7 +144,7 @@ form {
 }
 
 .title-container p {
-    width: 80%;
+    width: 75%;
 
     color: #646464;
 }
@@ -171,7 +171,7 @@ form {
 
 input,
 input:valid {
-    width: 165px;
+    width: 200px;
 
     border: 1px solid #646464;
     border-radius: 3px;
@@ -180,16 +180,11 @@ input:valid {
 input:focus,
 input:active {
     outline: none;
-    border: 1px solid #acc8bb;
-    box-shadow: 1px 1px 5px #acc8bb85, -1px 1px 5px #acc8bb85;
-}
-
-input:invalid {
-    border: 1px solid rgb(222, 97, 51);
+    border: 1px solid rgb(103, 172, 137);
 }
 
 input ~ p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 
     color: #646464;
 
