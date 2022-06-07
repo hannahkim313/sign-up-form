@@ -37,8 +37,7 @@ const phoneNumberReg = /^\d{3}[\-]\d{3}[\-]\d{4}$/;
  ******************************************************************************/
 
 /**
- * Displays an error message and changes the input's border color to red
- * if the user's input is invalid.
+ * Displays an error message if the user's input is invalid.
  * @param {object} input - Element object of input class.
  * @param {object} inputFormat - Element object of input's format.
  * @param {string} inputType - Name of input type.
@@ -78,7 +77,7 @@ function displayInvalid(input, inputFormat, inputType, userInput) {
 }
 
 /**
- * .Changes the border color to default and removes the error message
+ * Changes the border color to default and removes the error message
  * if the user's input is valid.
  * @param {object} inputFormat - Element object of input's format.
  * @param {object} userInput - Element object of user's text input.
@@ -145,7 +144,9 @@ userEmail.addEventListener("focus", e => {
 });
 
 userEmail.addEventListener("focusout", e => {
-    userEmail.style.border = "1px solid #646464";
+    if (email.lastElementChild.previousElementSibling.matches(".error")) {
+        userEmail.style.border = "1px solid #de6133";
+    } else userEmail.style.border = "1px solid #646464";
 });
 
 userPhoneNumber.addEventListener("keyup", e => {
@@ -163,7 +164,9 @@ userPhoneNumber.addEventListener("focus", e => {
 });
 
 userPhoneNumber.addEventListener("focusout", e => {
-    userPhoneNumber.style.border = "1px solid #646464";
+    if (phoneNumber.lastElementChild.previousElementSibling.matches(".error")) {
+        userPhoneNumber.style.border = "1px solid #de6133";
+    } else userPhoneNumber.style.border = "1px solid #646464";
 });
 
 userPassword.addEventListener("keyup", e => {
@@ -182,7 +185,9 @@ userPassword.addEventListener("focus", e => {
 });
 
 userPassword.addEventListener("focusout", e => {
-    userPassword.style.border = "1px solid #646464";
+    if (password.lastElementChild.previousElementSibling.matches(".error")) {
+        userPassword.style.border = "1px solid #de6133";
+    } else userPassword.style.border = "1px solid #646464";
 });
 
 confirmPassword.addEventListener("keyup", e => {
@@ -202,7 +207,9 @@ userConfirmPassword.addEventListener("focus", e => {
 });
 
 userConfirmPassword.addEventListener("focusout", e => {
-    userConfirmPassword.style.border = "1px solid #646464";
+    if (confirmPassword.lastElementChild.matches(".error")) {
+        userConfirmPassword.style.border = "1px solid #de6133";
+    } else userConfirmPassword.style.border = "1px solid #646464";
 });
 
 submitBtn.addEventListener("submit", e => location.reload());
