@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100%;
     overflow: auto;
 
     display: flex;
@@ -95,7 +95,7 @@ h1 {
 
 footer {
     position: absolute;
-    top: max(calc(100vh - 55px), 620px);
+    top: max(calc(100% - 55px), 600px);
 }
 
 footer a {
