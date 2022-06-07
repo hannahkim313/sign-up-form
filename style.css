@@ -180,7 +180,7 @@ input:valid {
 input:focus,
 input:active {
     outline: none;
-    border: 1px solid rgb(103, 172, 137);
+    border: 1px solid #67ac89;
 }
 
 input ~ p {

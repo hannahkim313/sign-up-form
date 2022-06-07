@@ -4,19 +4,19 @@
  * 
  ******************************************************************************/
 
+const form = document.querySelector("form");
+
 const email = document.querySelector(".email");
-const emailFormat = email.lastElementChild;
 const userEmail = document.querySelector("#userEmail");
 
 const phoneNumber = document.querySelector(".phone-number");
-const phoneNumberFormat = phoneNumber.lastElementChild;
 const userPhoneNumber = document.querySelector("#userPhoneNumber");
 
 const password = document.querySelector(".password");
-const passwordFormat = password.lastElementChild;
 const userPassword = document.querySelector("#userPassword");
 
-const confirmPassword = document.querySelector("#confirmPassword");
+const confirmPassword = document.querySelector(".confirm-password");
+const userConfirmPassword = document.querySelector("#confirmPassword");
 
 const submitBtn = document.querySelector("button");
 
@@ -48,11 +48,14 @@ const phoneNumberReg = /^\d{3}[\-]\d{3}[\-]\d{4}$/;
     errorMessage.className = "error";
     errorMessage.textContent =
         inputType === "password" ? "Please make your password longer"
+            : inputType === "confirm password" ? "* Passwords do not match"
             : `Please enter a valid ${inputType}`;
     errorMessage.style.fontSize = "0.7rem";
     errorMessage.style.color = "#de6133";
     input.appendChild(errorMessage);
-    input.insertBefore(errorMessage, inputFormat);
+    if (inputType !== "confirm password") {
+        input.insertBefore(errorMessage, inputFormat);
+    }
 }
 
 /**
@@ -65,7 +68,11 @@ const phoneNumberReg = /^\d{3}[\-]\d{3}[\-]\d{4}$/;
  */
 function displayInvalid(input, inputFormat, inputType, userInput) {
     userInput.style.border = "1px solid #de6133";
-    if (input.childElementCount < 4) {
+    if (inputType === "confirm password" && input.childElementCount < 3) {
+        userPassword.style.border = "1px solid #de6133";
+        displayError(input, inputFormat, inputType);
+    }
+    if (inputType !== "confirm password" && input.childElementCount < 4) {
         displayError(input, inputFormat, inputType);
     }
 }
@@ -77,9 +84,17 @@ function displayInvalid(input, inputFormat, inputType, userInput) {
  * @param {object} userInput - Element object of user's text input.
  */
 function displayValid(inputFormat, userInput) {
-    userInput.style.border = "1px solid #646464";
+    if (userInput === document.activeElement) {
+        userInput.style.border = "1px solid #67ac89";
+    }
     if (inputFormat.previousElementSibling.matches(".error")) {
         inputFormat.previousElementSibling.remove();
+    } else if (
+        userInput === userConfirmPassword &&
+        confirmPassword.lastElementChild.matches(".error")
+    ) {
+        userPassword.style.border = "1px solid #646464";
+        inputFormat.remove();
     }
 }
 
@@ -92,12 +107,18 @@ function displayValid(inputFormat, userInput) {
  * @param {*} condition - Condition to check input against.
  */
  function checkInput(input, inputFormat, inputType, userInput, condition) {
-    if (typeof(condition) === "object") {
+    if (inputType === "email address" || inputType === "phone number") {
         if (userInput.value && !condition.test(userInput.value)) {
             displayInvalid(input, inputFormat, inputType, userInput);
         } else displayValid(inputFormat, userInput);
-    } else {
+    }
+    if (inputType === "password") {
         if (userInput.value && condition) {
+            displayInvalid(input, inputFormat, inputType, userInput);
+        } else displayValid(inputFormat, userInput);
+    }
+    if (inputType === "confirm password") {
+        if (!condition) {
             displayInvalid(input, inputFormat, inputType, userInput);
         } else displayValid(inputFormat, userInput);
     }
@@ -109,29 +130,79 @@ function displayValid(inputFormat, userInput) {
  * 
  ******************************************************************************/
 
-userEmail.addEventListener("keyup", e => 
-    checkInput(email, emailFormat, "email address", userEmail, emailReg)
-);
+userEmail.addEventListener("keyup", e => {
+    checkInput(
+        email,
+        email.lastElementChild,
+        "email address",
+        userEmail,
+        emailReg
+    );
+});
 
-userPhoneNumber.addEventListener("keyup", e =>
+userEmail.addEventListener("focus", e => {
+    userEmail.style.border = "1px solid #67ac89";
+});
+
+userEmail.addEventListener("focusout", e => {
+    userEmail.style.border = "1px solid #646464";
+});
+
+userPhoneNumber.addEventListener("keyup", e => {
     checkInput(
         phoneNumber,
-        phoneNumberFormat,
+        phoneNumber.lastElementChild,
         "phone number",
         userPhoneNumber,
         phoneNumberReg
-    )
-);
+    );
+});
+
+userPhoneNumber.addEventListener("focus", e => {
+    userPhoneNumber.style.border = "1px solid #67ac89";
+});
+
+userPhoneNumber.addEventListener("focusout", e => {
+    userPhoneNumber.style.border = "1px solid #646464";
+});
 
 userPassword.addEventListener("keyup", e => {
     const isShort = userPassword.value.length < 8 ? true : false;
     checkInput(
         password,
-        passwordFormat,
+        password.lastElementChild,
         "password",
         userPassword,
         isShort
-    )
+    );
+});
+
+userPassword.addEventListener("focus", e => {
+    userPassword.style.border = "1px solid #67ac89";
+});
+
+userPassword.addEventListener("focusout", e => {
+    userPassword.style.border = "1px solid #646464";
+});
+
+confirmPassword.addEventListener("keyup", e => {
+    const isMatch =
+        userConfirmPassword.value === userPassword.value ? true : false;
+    checkInput(
+        confirmPassword,
+        confirmPassword.lastElementChild,
+        "confirm password",
+        userConfirmPassword,
+        isMatch
+    );
+});
+
+userConfirmPassword.addEventListener("focus", e => {
+    userConfirmPassword.style.border = "1px solid #67ac89";
+});
+
+userConfirmPassword.addEventListener("focusout", e => {
+    userConfirmPassword.style.border = "1px solid #646464";
 });
 
 submitBtn.addEventListener("submit", e => location.reload());
