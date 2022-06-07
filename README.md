@@ -1,11 +1,21 @@
 # Sign-up Form
 
+https://hannahkim313.github.io/sign-up-form/
+
 ## Summary
 
 This project exercise, created by The Odin Project, is an example of a sign-up
 form for an imaginary coffee shop's rewards program. With a main emphasis on
 both form and input elements, the final outcome reflects my understanding of
 intermediate CSS concepts through a simple UI.
+
+## In Action
+
+### Form Demonstration
+<img src="gif/test.gif" width="auto" height="auto"/>
+
+### Responsiveness Demonstration
+<img src="gif/responsiveness.gif" width="auto" height="auto"/>
 
 ## Goals
 
