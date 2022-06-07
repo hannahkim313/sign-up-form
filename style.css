@@ -6,7 +6,7 @@ html {
 body {
     height: 100vh;
     overflow: auto;
-    
+
     display: flex;
 }
 
@@ -121,7 +121,7 @@ footer a {
 
 form {
     width: 500px;
-    height: 600px;
+    min-height: 600px;
 
     border-radius: 10px;
     box-shadow: 4px 4px 10px #64646447, -4px 5px 10px #64646447;
@@ -256,5 +256,8 @@ button:focus {
 
     .right-container {
         width: 100vw;
+        height: auto;
+
+        margin: 50px 0;
     }
 }
