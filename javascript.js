@@ -211,5 +211,3 @@ userConfirmPassword.addEventListener("focusout", e => {
         userConfirmPassword.style.border = "1px solid #de6133";
     } else userConfirmPassword.style.border = "1px solid #646464";
 });
-
-submitBtn.addEventListener("submit", e => location.reload());
